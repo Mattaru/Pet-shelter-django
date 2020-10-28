@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shelter</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'stylesheets/bootstrap.min.css' %}">
+    {% block extra_style %}{% endblock %}
+</head>
+<body>
+    <div class="fluid-container  main-container">
+
+        <div class="container logo-container">{% block header %}{% endblock %}</div>
+
+        {% block main-nav %}{% endblock %}
+
+        <div class="container">
+            {% block search %}{% endblock %}
+            <div class="row">
+                {% block left_navigation %}{% endblock %}
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+
+        {% block footer %}{% endblock %}
+    </div>
+</body>
+</html>

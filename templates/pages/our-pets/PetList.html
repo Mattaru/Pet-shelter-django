@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block extra_style %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'stylesheets/main.css' %}">
+{% endblock %}
+
+{% block header %}
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <img src="/static/assets/unnamed.png" alt="animals-logo">
+        </div>
+        <div class="col-3 logo-container">
+        </div>
+    </div>
+{% endblock %}
+
+{% block main-nav %}
+    <ul class="nav justify-content-center  nav-panel">
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/">home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main active" href="/pet/">our pets</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/employee/">employees</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/about_us/">about us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/review/" tabindex="-1" aria-disabled="true">reviews</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block left_navigation %}
+    <div class="col-3 left-nav">
+        <nav class="nav flex-column">
+            <form class="search-form" action="/pet/">
+                <input type="search" name="petSearch" placeholder="Pet name...">
+                <input class="search-btn" type="submit" value="search">
+            </form>
+            <a class="nav-link nav-link-left" href="/pet/create/" tabindex="-1" aria-disabled="true">Add in shelter</a>
+        </nav>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="col-9 list-container">
+        {% for pet in object_list %}
+            <div class="list-card">
+                <a href="/pet/{{pet.id}}/">
+                    <img class="list-row-image" src="{{ pet.photo.url }}" alt="{{ pet.name }}">
+                </a>
+                <h3><a class="pet-card-link" href="/pet/{{pet.id}}/">{{ pet.name }}</a></h3>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <ul class="nav justify-content-center nav-panel">
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/pet/create/" tabindex="-1" aria-disabled="true">Add in shelter</a>
+        </li>
+    </ul>
+{% endblock %}

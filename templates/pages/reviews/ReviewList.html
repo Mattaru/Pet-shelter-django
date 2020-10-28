@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block extra_style %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'stylesheets/main.css' %}">
+{% endblock %}
+
+{% block header %}
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <img src="/static/assets/unnamed.png" alt="animals-logo">
+        </div>
+        <div class="col-3 logo-container">
+        </div>
+    </div>
+{% endblock %}
+
+{% block main-nav %}
+    <ul class="nav justify-content-center  nav-panel">
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/">home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/pet/">our pets</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/employee/">employees</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/about_us/">about us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main active" href="/review/" tabindex="-1" aria-disabled="true">reviews</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block left_navigation %}
+    <div class="col-3 left-nav">
+        <nav class="nav flex-column">
+            <a class="nav-link nav-link-left" href="/review/create/" tabindex="-1" aria-disabled="true">Give feedback</a>
+        </nav>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="col-9">
+        <div>
+            <h2>What we think about us:</h2>
+            <br>
+        </div>
+        {% for review in object_list %}
+            <div class="review-container">
+                <div class="icon-container">
+                    <a class="msg-icon" href="{{review.id}}/"><img src="/static/assets/pen.svg" alt="edit-message"></a>
+                    <a class="msg-icon" href="{{review.id}}/delete"><img src="/static/assets/trash.svg" alt="delete-message"></a>
+                </div>
+
+                <h5>{{ review.author_name }}:</h5>
+                <br>
+                <h4>{{ review.title }}</h4>
+                <p>{{ review.message_data }}</p>
+            </div>
+
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <ul class="nav justify-content-center nav-panel">
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/review/create/" tabindex="-1" aria-disabled="true">Give feedback</a>
+        </li>
+    </ul>
+{% endblock %}

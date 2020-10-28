@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block extra_style %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'stylesheets/main.css' %}">
+{% endblock %}
+
+{% block header %}
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <img src="/static/assets/unnamed.png" alt="animals-logo">
+        </div>
+        <div class="col-3 logo-container">
+        </div>
+    </div>
+{% endblock %}
+
+{% block main-nav %}
+    <ul class="nav justify-content-center  nav-panel">
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/">home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main active" href="/pet/">our pets</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/employee/">employees</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/about_us/">about us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/review/" tabindex="-1" aria-disabled="true">reviews</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block left_navigation %}
+    <div class="col-3 left-nav">
+        <nav class="nav flex-column">
+            <form class="search-form" action="/pet/">
+                <input type="search" name="petSearch" placeholder="Pet name...">
+                <input class="search-btn" type="submit" value="search">
+            </form>
+            <a class="nav-link nav-link-left" href="/pet/create/">Add in shelter</a>
+            <a class="nav-link nav-link-left" href="../update/">Edit pet data</a>
+            <a class="nav-link nav-link-left active-off-nav" href="#" tabindex="-1" aria-disabled="true">Delete from shelter</a>
+        </nav>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="col-7 delete-container">
+        <h4>Are you  realy wont to delete the pet from the shelter?</h4>
+        <div class="btn-container">
+            <form method="post">
+                {% csrf_token %}
+                <input class="delete-btn" type="submit" value="yes">
+            </form>
+            <form class="no-btn" action="../">
+                <input class="delete-btn" type="submit" value="no">
+            </form>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <ul class="nav justify-content-center nav-panel">
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/pet/create/">Add in shelter</a>
+        </li>
+        <li>
+            <a class="nav-link nav-link-main" href="../update/">Edit pet data</a>
+        </li>
+        <li>
+            <a class="nav-link nav-link-main active-off-nav" href="#" tabindex="-1" aria-disabled="true">Delete from shelter</a>
+        </li>
+    </ul>
+{% endblock %}

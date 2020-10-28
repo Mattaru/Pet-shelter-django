@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block extra_style %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'stylesheets/main.css' %}">
+{% endblock %}
+
+{% block header %}
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <img src="/static/assets/unnamed.png" alt="animals-logo">
+        </div>
+        <div class="col-3 logo-container">
+        </div>
+    </div>
+{% endblock %}
+
+{% block main-nav %}
+    <ul class="nav justify-content-center  nav-panel">
+        <li class="nav-item">
+            <a class="nav-link nav-link-main active" href="/">home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/pet/">our pets</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/employee/">employees</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/about_us/">about us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/review/" tabindex="-1" aria-disabled="true">reviews</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block left_navigation %}
+    <div class="col-3 left-nav">
+        <nav class="nav flex-column">
+            <a class="nav-link nav-link-left active-off-nav" href="/find_homeless/">Find a homeless pets</a>
+            <a class="nav-link nav-link-left" href="/troubles/">Troubles with a pet</a>
+            <a class="nav-link  disabled nav-row nav-link-left" href="#" tabindex="-1" aria-disabled="true" >Pick up a pet</a>
+        </nav>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="col-9">
+        <h2>Our announcing sufficient why pianoforte</h2><br>
+        <ul>
+            <li>
+                <h4>He families my pleasant speaking it bringing it thoughts</h4>
+                <p>
+                    Continual delighted as elsewhere am convinced unfeeling.
+                    Introduced stimulated attachment no by projection. To loud lady whom my mile sold four.
+                    Need miss all four case fine age tell. He families my pleasant speaking it bringing it thoughts.
+                    View busy dine oh in knew if even. Boy these along far own other equal old fanny charm.
+                    Difficulty invitation put introduced see middletons nor preference.
+                </p>
+            </li>
+            <li>
+                <h4>Afraid we praise lively he suffer family estate is</h4>
+                <p>
+                    Placing assured be if removed it besides on. Far shed each high read are men over day.
+                    Afraid we praise lively he suffer family estate is. Ample order up in of in ready.
+                    Timed blind had now those ought set often which. Or snug dull he show more true wish.
+                    No at many deny away miss evil. On in so indeed spirit an mother. Amounted old strictly but marianne admitted.
+                    People former is remove remain as.
+                </p>
+            </li>
+            <li>
+                <h4>There spoke happy for you are out</h4>
+                <p>
+                    Procuring education on consulted assurance in do. Is sympathize he expression mr no travelling.
+                    Preference he he at travelling in resolution. So striking at of to welcomed resolved.
+                    Northward by described up household therefore attention.
+                    Excellence decisively nay man yet impression for contrasted remarkably.
+                    There spoke happy for you are out. Fertile how old address did showing because sitting replied six.
+                    Had arose guest visit going off child she new.
+                </p>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <ul class="nav justify-content-center nav-panel">
+        <li class="nav-item">
+            <a class="nav-link nav-link-main active-off-nav" href="/find_homeless/">Find a homeless pets</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main" href="/troubles/">Troubles with a pet</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-main disabled" href="#" tabindex="-1" aria-disabled="true" >Pick up a pet</a>
+        </li>
+    </ul>
+{% endblock %}

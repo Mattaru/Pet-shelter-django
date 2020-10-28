@@ -1,0 +1,7 @@
+.idea
+env
+animal_shelter/__pycache__
+reviews/__pycache__
+reviews/migrations/__pycache__
+shelter/__pycache__
+shelter/migrations/__pycache__
