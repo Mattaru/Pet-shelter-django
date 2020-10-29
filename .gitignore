@@ -1,3 +1,4 @@
+db.postgresql
 .idea
 env
 animal_shelter/__pycache__
