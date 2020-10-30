@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
     '0.0.0.0',
-    'fast-wildwood-82508.herokuapp.com'
+    'still-peak-04673.herokuapp.com',
 ]
 
 
@@ -89,9 +89,9 @@ WSGI_APPLICATION = 'animal_shelter.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 # DATABASES = {
-#    'default': {
+#     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.postgresql',
+#        'NAME': BASE_DIR / 'db.postgresql',
 #     }
 # }
 
