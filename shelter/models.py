@@ -1,5 +1,3 @@
-import uuid
-
 from django.db import models
 from django.urls import reverse
 from django.core import validators
@@ -8,7 +6,6 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Owner(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, unique=True)
     first_name = models.CharField(verbose_name='First name', max_length=50)
     last_name = models.CharField(verbose_name='Last name', max_length=50)
     country = models.CharField(verbose_name='Country', max_length=30)
@@ -22,7 +19,6 @@ class Owner(models.Model):
 
 
 class Employee(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, unique=True)
     first_name = models.CharField(verbose_name='First name', max_length=50)
     last_name = models.CharField(verbose_name='Last name', max_length=50)
     phone_number = PhoneNumberField(verbose_name='Phone number', blank=True)
@@ -46,7 +42,6 @@ class Employee(models.Model):
 
 
 class Breed(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, unique=True)
     name = models.CharField(verbose_name='name', max_length=50)
     features = models.TextField(verbose_name='Features', max_length=1500)
 
@@ -55,7 +50,6 @@ class Breed(models.Model):
 
 
 class Pet(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, unique=True)
     name = models.CharField(verbose_name='Name', max_length=50)
     age = models.IntegerField(verbose_name='Age', validators=[validators.MaxValueValidator(30)])
     description = models.TextField(verbose_name='Description', max_length=1500)
