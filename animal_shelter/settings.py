@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
     '0.0.0.0',
-    'still-peak-04673.herokuapp.com',
+    'fathomless-lake-87191.herokuapp.com',
 ]
 
 
